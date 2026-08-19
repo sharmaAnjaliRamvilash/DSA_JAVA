@@ -12,13 +12,6 @@ mySeries = pd.Series([31,22,63,84,95])
 # print(mySeries+5)
 
 # desc = mySeries.sort_values(ascending=False)
-count=0
-
-if(mySeries[mySeries>75]):
-    count+=1
-
-
-print(count)
 
 
 
