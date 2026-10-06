@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> AI CODE REVIEWER </h1>
+        Language: <select id="language">
+            <option value="JAVA">JAVA</option>
+            <option value="C++">C++</option>
+            <option value="PYTHON">PYTHON</option>
+            <option value="JAVASCRIPT" >JAVASCRIPT</option>
+
+        </select>
+            
+<textarea name="" id="code" placeholder="Write your code here"> </textarea>
+        <button id="reviewBtn">REVIEW CODE</button>
+
+        <div class="reviewSection">
+            <h1>AI REVIEW SECTION</h1>
+            <p id="issue">Issue: </p>
+            <p id="suggetions">Suggestions: </p>
+            <p id="complexity">Complexity: </p>
+            <p id="improve">Impreoved code: </p>
+        </div>
+    </div>
+
+
+
+    <script src="AiReviewCodeEditor.js">
+
+    </script>
+
+</body>
+
+</html>

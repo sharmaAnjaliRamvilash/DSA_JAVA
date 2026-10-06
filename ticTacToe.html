@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .win{
+              color: rgb(35, 231, 35);
+              border: 1px solid black;
+              
+        }
+        .boxes{
+               display: flex;
+            
+        }
+        .box{
+               height: 40px;
+               width: 50px;
+        }
+    </style>
+</head>
+<body>
+          <main class="game">
+            <h1>Tic Tac Toe</h1>
+            <p id="currentPlayer">Player'X turn</p>
+            <div class="boxes">
+            <button class="box" data-index="0"></button>
+            <button class="box" data-index="1"></button>
+            <button class="box" data-index="2"></button>
+            <button class="box" data-index="3"></button>
+            <button class="box" data-index="4"></button>
+            <button class="box" data-index="5"></button>
+            <button class="box" data-index="6"></button>
+            <button class="box" data-index="7"></button>
+            <button class="box" data-index="8"></button>
+          </div>
+          <div class="status"></div>
+          <button id="reset">Reset</button>
+
+          </main>
+
+    <script src="ticTacToe.js">
+
+    </script>
+    
+</body>
+</html>

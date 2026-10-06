@@ -1,9 +1,731 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.lang.reflect.Array;
+// import java.util.ArrayList;
+// import java.util.Collection;
+
+
+// public  class  programe{
+//       public  static  class Edge{
+//      int src;
+//      int des;
+//      int wt;
+
+//     public Edge(int src,int des,int wt) {
+//        this.src = src;
+//        this.des = des;
+//        this.wt = wt;
+//     }
+    
+     
+// }
+//      public static  int  find(int parent[],int v){
+//                if(parent[v]==v){
+//                        return  v;
+//                }
+//                return  parent[v] = find(parent, parent[v]);
+            
+//      }
+//      public static void union(int parent[],int rank[],int u,int v){
+//                int rootU = find(parent, u);
+//                int rootV = find(parent, v);
+//                if(rootU!=rootV){
+//                           if(rank[rootU]<rank[rootV]){
+//                                    parent[rootU] = rootV;
+//                           }else if(rank[rootU]>rank[rootV]){
+//                                     parent[rootV] = parent[rootU];
+//                           }else{
+//                                 parent[rootU] = rootV;
+//                                 rank[rootV]++;
+//                           }
+//                }
+//      }
+//      public static void kruskal(int v,ArrayList<Edge> edges){
+//                Collection.sort(Edge,(a,b)->a.wt-b.wt);
+//                int parent[] = new int[v];
+//                int rank[] = new int[v];
+//                for(int i=0;i<v;i++){
+//                        parent[i] = i;
+//                        rank[i] = 0;
+//                }
+//                int mstCost =0;
+//                int selectedEdge =0;
+//                for(Edge edge: edges){
+//                         int rootU = find(parent, edge.src);
+//                         int rootV = find(parent, edge.des);
+//                         if(rootU!=rootV){
+//                              mstCost +=    edge.wt;
+//                              selectedEdge++;
+//                              union(parent, rank, edge.src, edge.des);
+//                              if(selectedEdge==v-1){
+//                                     break;
+//                              }
+
+//                         }  
+
+//                }
+//                System.out.println("Mst Cost" + mstCost);
+
+//      }
+//      public static void main(String[] args) {
+//            ArrayList<Edge> adj = new ArrayList<>();
+//            int v = 5;
+//            adj.add(new Edge(0,1,4));
+//            adj.add(new Edge(0,3,2));
+//            kruskal(v, adj);
+
+            
+//      }
+// }
+
+
+
+
+
+
+
+
+
+
+
+// public class programe{
+//     public static void deleteAndEarn(int nums[]){
+//           int max =0;
+//           for(int num: nums){
+//                 max = Math.max(max,num);
+//           }
+//           int points[] = new int[max+1];
+//           for(int num: nums){
+//                points[num] += num;
+//           }
+//           int n = nums.length;
+//           int dp[] = new int[max+1];
+//           for(int i=2;i<max+1;i++){
+//                  dp[i]= Math.max(dp[i-1],points[i]+dp[i-2]);
+//           }
+//           for(int i=0;i<dp.length;i++){
+//                System.out.print(dp[i]+ "  ");
+//           }
+//         //   System.out.print(dp[max]);
+
+
+
+//     }
+//     public static void houseRobber(){
+//             int nums[] = {2,7,9,3,1};
+//            int n = nums.length;
+//            int dp[] = new int[n];
+//            dp[0] = nums[0];
+//            dp[1] = nums[1];
+//            for(int i=2;i<n;i++){
+//                 int curr = nums[i]+dp[i-2];
+//                 int prev = dp[i-1];
+//                 dp[i] = Math.max(curr,prev);
+//            }
+//             System.out.print(dp[n-1]);
+//     }
+//     public static void main(String[] args) {
+//         int nums[] = {2,2,3,3,3,4};
+//         deleteAndEarn(nums);
+
+         
+//     }
+// }
+
+
+
+
+
+
+
+
+// public class programe{
+//        public static void main(String args[]){
+//                   String strs[] = {"flower","flow","flight"};
+//                   int n = strs.length;
+//                   String prefix = strs[0];
+//                   for(int i=1;i<n;i++){
+//                          while(!strs[i].startsWith(prefix)){
+//                                  prefix  =  prefix.substring(0,prefix.length()-1);
+//                          }
+//                   }
+//                   System.out.print(prefix.isEmpty()?"  ": prefix.toString());
+//        }
+// }
+
+
+
+
+// import java.util.*;
+// public  class  programe{
+//        public static List<List<String>> helper(){
+//                      String strs[] = {"tea","ate","tan","ant","ban","nba"};
+//               int n = strs.length;
+//               HashMap<String,List<String>> map = new HashMap<>();
+//               for(String str: strs){
+//                      char chars[] = str.toCharArray();
+//                      Arrays.sort(chars);
+//                      String key = new String(chars);
+//                      if(!map.containsKey(key)){
+//                                    map.put(key, new ArrayList<>());
+//                      }
+//                      map.get(key).add(str);
+//               }
+
+//               return new ArrayList<>(map.values());
+
+//        }
+
+//        public static void main(String[] args) {
+//               List<List<String>> ans = new ArrayList<>();
+//               ans =  helper();
+//               for(List<String> a: ans){
+//                         System.out.println(a);
+//               }
+              
+
+//        }
+// }
+
+
+
+
+
+// import java.util.ArrayList;
+
+// public  class  programe{
+//        public  static void swap(int i,int index,int nums[]){
+//                 int temp = nums[i];
+//                 nums[i] = nums[index];
+//                 nums[index]  = temp;
+//        }
+//        public static void helper(ArrayList<ArrayList<Integer>> res,int nums[],int index,int n){
+//                if(index==n){
+//                          res.add(new ArrayList<>(nums[index]));
+//                          return;
+//                }
+//                for(int i=0;i<index;i++){
+//                          swap(i,index,nums);
+//                          helper(res, nums, index+1, n);
+//                          swap(i,index,nums);
+//                }
+
+//        }
+//        public static void main(String[] args) {
+//               int nums[] = {1,2,3};
+//               int n = nums.length;
+//               ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+//               helper(res,nums,0,n);
+//               for(ArrayList<Integer> ans: res){
+//                           for(int num: ans){
+//                             System.out.print("[ " + num + " ]");
+//                           }
+//                           System.out.println();
+//               }
+//        }
+// }
+// import java.util.Stack;
+
+// public  class  programe{
+//        public static void main(String[] args) {
+//             String str = "()[]{}";
+//             int n = str.length();
+//             Stack<Character> st= new Stack<>();
+//             for(char ch: str.toCharArray()){
+//                   if(ch=='(' ||  ch=='{' || ch=='['){
+//                           st.push(ch);
+//                   }
+//                    if(!st.isEmpty()  && (st.peek()=='(' && ch==')') || (st.peek()=='['  && ch==']') || (st.peek()=='{' && ch=='}')){
+//                           st.pop();
+//                    }
+//             }
+//             if(st.isEmpty()){
+//                  System.out.print("Valid peranthesis");
+//             }else{
+//                  System.out.print("Not valie peranthsis");
+//             }
+//        }
+// }
+
+
+
+
+
+// import java.util.ArrayList;
+
+// public  class programe{
+//        public static class Edge{
+//               int src;
+//               int des;
+//               int wt;
+//               Edge(int src,int des,int wt){
+//                        this.src = src;
+//                        this.des = des;
+//                        this.wt = wt;
+//               }
+//               public static void createGraph(ArrayList<Edge> graph[]){
+//                      for(int i=0;i<graph.length;i++){
+
+//                              graph[i]   = new ArrayList<>();
+//                      }
+//                      graph[0].add(new Edge(1,3,2));
+//                      graph[1].add(new Edge(3,1,2));
+//                      graph[2].add(new Edge(1,3,4));
+//               }
+//        }
+//        public static void main(String args[]){
+               
+//        }
+// }
+
+
+
+// import java.util.*;
+// public class programe{
+//        public class Edge{
+//               int src;
+//               int des;
+//               int wt;
+
+//         public Edge(int src,int des,int wt) {
+//               this.src = src ;
+//               this.des = des;
+//               this.wt = wt;
+//         }
+              
+//        }
+//        public static void createGraph(ArrayList<Edge> graph[]){
+//               for(int i=0;i<graph.length;i++){
+//                         graph[i] = new ArrayList<>();
+//               }
+//               graph[0].add(new Edge(0,1,2));
+//               graph[0].add(new Edge(0,2,4));
+//               graph[1].add(new Edge(1,2,4));
+//               graph[2].add(new Edge(2,3,2));
+
+//        }
+//        public static void bellmanFordAlgo(A)
+//        public static void main(String[] args) {
+              
+//        }
+// }
+
+
+
+// import  java.util.*;
+// public class programe{
+//        public static  void main(String args[]){
+//               String s = "()[]{}";
+//               int n = s.length();
+//               Stack<Character> st = new Stack<>();
+//               for(char ch: s.toCharArray()){
+//                      if(ch=='('  || ch=='{' || ch=='['){
+//                               st.push(ch);
+//                      }
+//                      if(!st.isEmpty()  && (st.peek()=='('  && ch==')')  || (st.peek()=='{'  && ch=='}')  || (st.peek()=='['  && ch==']')){
+//                                 st.pop();
+//                      }
+//               }
+//               System.out.print(st.isEmpty()  ? true: false);
+
+//        }
+// }
+
+
+
+// import java.util.*;
+// public  class  programe{
+//        public static ArrayList<ArrayList<Integer>> helper(int nums[]){
+//               ArrayList<ArrayList<Integer>> result= new ArrayList<>();
+//                helper(nums,result,0, new ArrayList<>());
+//                return  result;
+//        }
+//        public static void swap(int nums[],int index,int i){
+//                int temp = nums[index];
+//                nums[index] = nums[i];
+//                nums[i] = temp;
+//        }
+//        public static void helper(int nums[],ArrayList<ArrayList<Integer>> result,int index,ArrayList<Integer>list){
+//                 if(index==nums.length){
+//                      result.add(new ArrayList<>(list));
+//                      return;
+//                 }
+//                  for(int i=0;i<index;i++){
+//                             list.add(nums[index]);
+//                             swap(nums,index,i);
+//                             helper(nums,result,index+1,list);
+                          
+//                  }
+//        }
+//        public static void main(String args[]){
+//                  ArrayList<ArrayList<Integer>> result= new ArrayList<>();
+//                  int nums[] = {1,2,3};
+//                 result = helper(nums);
+//                   for(ArrayList<Integer> list: result){
+//                                for(int num:list){
+//                                        System.out.print(num);
+//                                }
+//                                System.out.println();
+//                  }         
+//        }
+// }
+
+
+
+// import java.util.*;
+// public  class  programe{
+//     public static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+
+//         public Node(int data) {
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+
+//         public static int depthHeight(Node node){
+//                 if(node==null){
+//                        return 0;
+//                 }
+//                 int left = 1+depthHeight(node.left);
+//                 int right = 1+depthHeight(node.right);
+//                 return  Math.max(left,right);
+//         }
+//          public static Node invertBinaryTree(Node node){
+//                  if(node==null){
+//                         return null;
+//                  }
+//                   Node temp = node.left;
+//                   node.left = node.right;
+//                   node.right = temp;
+//                   invertBinaryTree(node.left);
+//                   invertBinaryTree(node.right); 
+//                  return node;
+//          }
+//          public static boolean  validateBinaryTree(Node node){
+//                 if(node==null){
+//                       return true;
+//                 }
+//                 if(node.data>=node.left.data  && node.data<=node.right.data){
+//                         return  true;
+//                 }
+//                 validateBinaryTree(node.left);
+//                 validateBinaryTree(node.right);
+//                 return false;
+//          }
+//          public static int kthLargestElement(Node node,int count,int k){
+//                      if(node==null){
+//                           return 0;
+//                      }
+//                      kthLargestElement(node.left,count++,k);
+//                      if(count==k){
+//                           return  node.data;
+//                      }
+//                      kthLargestElement(node.right, count++, k);
+//                      return -1;
+                     
+
+//          }
+//          public static ArrayList<Integer> rightSideView(Node node){
+//              ArrayList<Integer> list = new ArrayList<>();
+//                 if(node==null){
+//                       return  list;
+//                 }
+//                 Queue<Node> q = new LinkedList<>();
+//                 q.add(node);
+//                 while(!q.isEmpty()){
+                      
+//                        int n = q.size();
+//                        for(int i=0;i<n;i++){
+//                          Node curr = q.poll();
+//                               if(i==n-1){
+//                                        list.add(curr.data);
+//                               }
+//                               if(curr.left!=null){
+//                                       q.add(curr.left);
+//                               }
+//                               if(curr.right!=null){
+//                                    q.add(curr.right);
+//                               }
+//                        }
+//                 }
+//                 return list;
+//          }
+        
+//          public static ArrayList<Integer> rightSideViewRec(Node node){
+//              ArrayList<Integer> res = new ArrayList<>();
+//                 int dist =0;
+//                 rightSideViewHelper(node,dist,res);
+//                 return  res;
+//          }
+//          public static void rightSideViewHelper(Node node,int dist,ArrayList<Integer> res){
+//                 if(node==null){
+//                          return;
+//                 }
+//                 if(res.size()==dist){
+//                           res.add(node.data);
+//                 }
+//                 rightSideViewHelper(node.left,dist+1,res);
+//                 rightSideViewHelper(node.right, dist+1, res);
+
+//          }
+
+//     }
+
+//     public static void main(String[] args) {
+//         Node  root = new Node(2);
+//         root.left  = new  Node(3);
+//         root.left.left = new Node(4);
+//         root.right = new Node(5);
+//         root.right.right = new Node(6);
+//         // System.out.print(root.depthHeight(root));
+//         // root.invertBinaryTree(root);
+//         // root.rightSideViewRec(root,0);
+//         // for(int val: root.res){
+//         //        System.out.print(val +" ");
+//         // }
+        
+
+          
+//     }
+// }
+
+// import java.util.HashSet;
+
+// public  class programe{
+//     public static  void main(String args[]){
+//           String str = "abcabcbb";
+//           int  n = str.length();
+//           HashSet<Character> set = new HashSet<>();
+//           int i=0;
+//           int max=0;
+//           for(int j=0;j<n;j++){
+//                  char ch = str.charAt(j);
+//                  while(set.contains(ch)){
+//                        set.remove(ch);
+//                        i++;
+//                  }
+//                  set.add(ch);
+//                  max = Math.max(max,j-i+1);
+//           }
+//           System.out.print(max);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.util.*;
+// public  class  programe{
+//     public static void main(String[] args) {
+//             String sub = "abcabcbb";
+//             HashSet<Character> set = new HashSet<>();
+//             int n = sub.length();
+//             int i=0;
+//             int j=0;
+//             int max=0;
+//             while(j<n){
+//              char ch = sub.charAt(j);
+//              if(set.contains(ch)){
+//                    set.remove(ch);
+                    
+                    
+//                      i++;
+//              }
+//               set.add(ch);
+//               max = Math.max(j-i+1,max);
+//              j++;
+            
+
+//             }
+//             System.out.print(max);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public class programe {
+
+//     public void maxSumSubArray() {
+//         int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+//         int n = nums.length;
+//         int max = Integer.MIN_VALUE;
+//         int sum = 0;
+
+//         for (int i = 0; i < n; i++) {
+//             sum = 0;
+//             for (int j = i; j < n; j++) {
+//                 sum += nums[j];
+//                 max = Math.max(max, sum);
+//             }
+
+//         }
+//         System.out.print(max);
+//     }
+
+//     public static void maxSumSubArrayKedans() {
+//         int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};   
+//         int n = nums.length;
+//         int sum = nums[0];
+//         int max = nums[0];
+//         for (int i = 1; i < n; i++) {
+//                      sum  = Math.max(nums[i],nums[i]+sum);
+//                      max = Math.max(max,sum);
+
+//         }
+//         System.out.print(max);
+
+//     }
+
+//     public static void main(String[] args) {
+//         maxSumSubArrayKedans();
+
+//     }
+// }
+
+// import  java.util.*;
+// public  class  programe{
+//     public static boolean  helper(){
+//          int nums[] = {1, 2, 3, 1};
+//         int n = nums.length;
+//         HashSet<Integer> set = new HashSet<>();
+//         for(int i=0;i<n;i++){
+//               if(set.contains(nums[i])){
+//                          return  true;
+//               }
+//         }
+//         return  false;
+//     }
+//     public static  void main(String args[]){
+//       boolean ans =    helper();
+//       System.out.print(ans);
+//     }
+// }
+// public  class  programe{
+//     public  static  void main(String args[]){
+//           int nums[]= {7,1,5,3,6,4};
+//           int n = nums.length;
+//           int buy = nums[0];
+//           int max =0;
+//           for(int i=1;i<n;i++){
+//             int profit =0;
+//                if(buy>nums[i]){
+//                        buy = nums[i];
+//                }else{
+//                    profit  = nums[i]-buy;
+//                    max = Math.max(max,profit);
+//                }
+//           }
+//           System.out.print(max);
+//     }
+// }
+// public  class programe{
+//     public static int[] helper(){
+//           int nums[] = {2, 7, 11, 15};
+//         int n = nums.length;
+//         int sum=0;
+//         int k  = 9;
+//         for(int i=0;i<n;i++){
+//              sum+= nums[i];
+//                 for(int j=i+1;j<n;j++){
+//                        sum += nums[j];
+//                        if(sum%k==0){
+//                             return new int[]{nums[i],nums[j]};   
+//                        }
+//                 }
+//         }
+//         return  new int[]{-1,-1};
+//     }
+//     public   static void main(String args[]){
+//                int ans[] = helper();
+//                for(int nums: ans){
+//                    System.out.print(nums);
+//                }
+//     }
+// }
+// import java.util.HashMap;
+// public class programe{
+//     public static void main(String[] args) {
+//          int nums[] = {4,5,3,7,2,9};
+//          int n = nums.length;
+//          int target = 18;
+//          HashMap<Integer,Integer> map = new HashMap<>();
+//          map.put(0,1);
+//          int count=0;
+//          int sum=0;
+//          for(int num: nums){
+//                 sum += num;
+//              count+= map.getOrDefault(sum-target,0);
+//               map.put(sum, map.getOrDefault(sum, 0)+1);
+//          }
+//          System.out.print(count);
+//     }
+// }
+// import java.util.*;
+// public class programe{
+//     public static void main(String[] args) {
+//             int nums[] = {100,4,200,1,3,2};
+//             int n = nums.length;
+//             HashSet<Integer> set  = new HashSet<>();
+//             for(int num: nums){
+//                    set.add(num);
+//             }
+//             int current = 1;
+//             int max = 0;
+//             for(int i=0;i<n;i++){
+//                     if(set.contains(nums[i]+1)){
+//                              current +=1;
+//                              max = Math.max(max,current);
+//                    }
+//             }
+//             System.out.print(max);
+//     }
+// }
 // import java.util.*;
 // public class programe{
 //      public static int largestRectangleHist(){
 //           int heights[] = {2,1,5,6,2,3};
 //           int n = heights.length;
+//   Stack<Integer> st = new Stack<>();
 //           int maxHeight = 0;
 //           for(int i=0;i<n;i++){
 //                 int  currentHeight = 1;
@@ -25,20 +747,10 @@
 //                 }
 //           }
 //           System.out.print(maxHeight);
-
 //      }
 //     public static void main(String args[]){
-          
 //     }
 // }
-
-
-
-
-
-
-
-
 // public  class programe{
 //     public static void maxSlidingWindow(){
 //         int nums[]   = {1,3,-1,-3,5,3,6,7};
@@ -51,22 +763,13 @@
 //              }
 //         }
 //         System.out.print(max);
-          
 //     }
 //     public static void main(String[] args) {
 //         maxSlidingWindow();
-           
 //     }
 // }
-
-
-
-
-
-
 // import java.util.*;
 // public class programe {
-
 //     public static void main(String[] args) {
 //         int val[] = {60, 100, 120};
 //         int wt[] = {10, 20, 30};
@@ -92,10 +795,8 @@
 //             }
 //         }
 //         System.out.print(profit);
-
 //     }
 // }
-
 // import java.util.PriorityQueue;
 // public class programe{
 //     public static class Pair{

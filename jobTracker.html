@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="dashboard">
+          <div class="stat-card">
+            <h3>Total</h3>
+            <span id="totalCount">0</span>
+
+          </div>
+          <div class="stat-card">
+           <h3>Interview</h3>
+           <span id="interviewCount">0</span>
+
+          </div>
+          <div class="stat-card">
+            <h3>Selected</h3>
+            <span id="selectedCount">0</span>
+    
+
+          </div>
+          <div class="stat-card">
+            <h3>Rejected</h3>
+            <span id="rejectedCount">0</span>
+
+          </div>
+          
+          
+    </div>
+    <h1>
+        AI Job JobTracker
+    </h1>
+    <form action="" id="jobForm">
+        <input type="text" id="company" placeholder="Enter the company name">
+        <input type="text" id="role" placeholder="Enter the Job role">
+        <input type="date" id="date">
+        <select name="" id="options">
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+        <button id="submit">Submit</button>
+        <input type="text" id="search" placeholder="Search anything related">
+        <input type="text" id="statusFilter" placeholder="Search company or Role">
+          <select name="" id="sortBy">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="company">Company</option>
+          </select>
+        <div id="application">
+
+        </div>
+
+    </form>
+
+    <script src="jobTracker.js">
+
+    </script>
+
+</body>
+
+</html>

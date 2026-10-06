@@ -1,10 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 #    working with the series
 
-import pandas as  pd
+# import pandas as  pd
 
 
-studentsName = ["anjali","sneha","priya","ragini","rajvi"]
-mySeries = pd.Series([31,22,63,84,95])    
+# studentsName = ["anjali","sneha","priya","ragini","rajvi"]
+# mySeries = pd.Series([31,22,63,84,95])    
 
 #      who score >75
 # print(mySeries[mySeries>75])
@@ -14,18 +27,10 @@ mySeries = pd.Series([31,22,63,84,95])
 # desc = mySeries.sort_values(ascending=False)
 
 
-
-
-
-
 # print(mySeries.mean)
 
 # decreaseOrder  =    mySeries.sort_values(ascending=True)
 # print(decreaseOrder)
-
-
-
-
 
 #    statical function on the series
 # print(mySeries.mean())
